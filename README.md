@@ -42,3 +42,31 @@ This folder contains the public assets for the React app. The `index.html` file 
 ### `src/`
 
 This folder contains the React app boilerplate code. The `App.js` file contains the main `App` component, and the `index.js` file is the entry point for the React app.
+
+## Dev Container
+
+The `.devcontainer` folder contains the configuration files for the development container. This allows you to develop the project in a consistent environment, regardless of the host machine's setup.
+
+### Contents
+
+- `devcontainer.json`: This file defines the configuration for the development container, including the extensions to be installed.
+
+### Extensions
+
+The `devcontainer.json` file includes the following extensions:
+
+- `GitHub.copilot`
+- `esbenp.prettier-vscode`
+- `dsznajder.es7-react-js-snippets`
+
+### Using the Dev Container
+
+To use the development container, follow these steps:
+
+1. Install the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension for Visual Studio Code.
+
+2. Open the project in Visual Studio Code.
+
+3. Press `F1` to open the command palette, then type and select `Remote-Containers: Open Folder in Container...`.
+
+4. Select the project folder. Visual Studio Code will build and open the development container.
