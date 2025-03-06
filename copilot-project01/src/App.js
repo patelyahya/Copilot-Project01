@@ -1,9 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './Header';
+import React, { useState } from 'react';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [username, setUsername] = useState('John Doe');
+
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+  };
+
   return (
     <div className="App">
+      {isAuthenticated && <Header username={username} onLogout={handleLogout} />}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
