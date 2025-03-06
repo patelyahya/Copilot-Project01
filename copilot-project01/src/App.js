@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './Login';
 import Welcome from './Welcome';
+import Header from './Header';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -16,9 +17,21 @@ function App() {
     setUsername(username);
   };
 
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    setUsername('');
+  };
+
   return (
     <Container>
-      {isAuthenticated ? <Welcome username={username} /> : <Login onLogin={handleLogin} />}
+      {isAuthenticated ? (
+        <>
+          <Header username={username} onLogout={handleLogout} />
+          <Welcome username={username} />
+        </>
+      ) : (
+        <Login onLogin={handleLogin} />
+      )}
     </Container>
   );
 }
