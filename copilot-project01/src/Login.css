@@ -1,0 +1,54 @@
+.login-container {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+  background-color: #f8f9fa; /* Assuming this is the background color */
+}
+
+.quote-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  animation: fadeInLeft 1s ease-in-out;
+  background-color: #f8f9fa; /* Same background color */
+}
+
+.quote-text {
+  font-family: 'Georgia', serif;
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+}
+
+.form-container {
+  padding: 20px;
+  animation: fadeInRight 1s ease-in-out;
+}
+
+.form-container .btn-primary {
+  margin-top: 20px;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

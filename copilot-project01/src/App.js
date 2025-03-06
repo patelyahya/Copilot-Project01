@@ -1,51 +1,26 @@
 import React, { useState } from 'react';
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './Login';
+import Welcome from './Welcome';
 
-function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [username, setUsername] = useState('');
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Email:', email);
+  const handleLogin = (username, password) => {
+    // Perform authentication logic here
+    console.log('Username:', username);
     console.log('Password:', password);
+    setIsAuthenticated(true);
+    setUsername(username);
   };
 
   return (
     <Container>
-      <Row className="justify-content-md-center">
-        <Col md="4">
-          <h2>Login</h2>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Enter email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Form.Group>
-
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Group>
-
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
-        </Col>
-      </Row>
+      {isAuthenticated ? <Welcome username={username} /> : <Login onLogin={handleLogin} />}
     </Container>
   );
 }
 
-export default Login;
+export default App;
