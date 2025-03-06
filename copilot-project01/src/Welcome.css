@@ -1,0 +1,11 @@
+.welcome-container {
+  background: linear-gradient(to right, #ece9e6, #ffffff);
+  background-color: #f8f9fa; /* Assuming this is the background color */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  text-align: center;
+}

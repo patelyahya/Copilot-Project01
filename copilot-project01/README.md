@@ -1,70 +1,72 @@
-# Getting Started with Create React App
+# Simple Login App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup and Run the Simple Login App
 
-## Available Scripts
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/patelyahya/Copilot-Project01.git
+   cd Copilot-Project01
+   ```
 
-In the project directory, you can run:
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
 
-### `npm start`
+3. Start the development server:
+   ```sh
+   npm start
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Folder Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The project structure is as follows:
 
-### `npm test`
+```
+Copilot-Project01/
+├── public/
+│   ├── index.html
+│   └── ...
+├── src/
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── package.json
+└── README.md
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `public/`
 
-### `npm run build`
+This folder contains the public assets for the Simple Login App. The `index.html` file is the entry point for the app.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `src/`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This folder contains the Simple Login App code. The `App.js` file contains the main `Login` component, and the `index.js` file is the entry point for the Simple Login App.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Dev Container
 
-### `npm run eject`
+The `.devcontainer` folder contains the configuration files for the development container. This allows you to develop the project in a consistent environment, regardless of the host machine's setup.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Contents
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- `devcontainer.json`: This file defines the configuration for the development container, including the extensions to be installed.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Extensions
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The `devcontainer.json` file includes the following extensions:
 
-## Learn More
+- `GitHub.copilot`
+- `esbenp.prettier-vscode`
+- `dsznajder.es7-react-js-snippets`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Using the Dev Container
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To use the development container, follow these steps:
 
-### Code Splitting
+1. Install the [Remote - Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension for Visual Studio Code.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+2. Open the project in Visual Studio Code.
 
-### Analyzing the Bundle Size
+3. Press `F1` to open the command palette, then type and select `Remote-Containers: Open Folder in Container...`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Select the project folder. Visual Studio Code will build and open the development container.
