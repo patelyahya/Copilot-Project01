@@ -49,7 +49,7 @@ The `.devcontainer` folder contains the configuration files for the development 
 
 ### Contents
 
-- `devcontainer.json`: This file defines the configuration for the development container, including the extensions to be installed.
+- `devcontainer.json`: This file defines the configuration for the development container, including the extensions to be installed and the post-start command.
 
 ### Extensions
 
@@ -58,6 +58,13 @@ The `devcontainer.json` file includes the following extensions:
 - `GitHub.copilot`
 - `esbenp.prettier-vscode`
 - `dsznajder.es7-react-js-snippets`
+
+### Post Start Command
+
+The `postStartCommand` in the `devcontainer.json` file is executed after the container is built and started. It navigates to the `copilot-project01` directory and installs the necessary npm dependencies:
+   ```json
+   "postStartCommand": "cd copilot-project01 && npm install"
+   ```
 
 ### Using the Dev Container
 

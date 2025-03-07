@@ -1,0 +1,42 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #282c34;
+  padding: 10px 20px;
+  color: white;
+}
+
+.header-left,
+.header-center,
+.header-right {
+  flex: 1;
+}
+
+.header-center {
+  text-align: center;
+}
+
+.header-right {
+  text-align: right;
+}
+
+.header button {
+  background-color: #61dafb;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: #282c34;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.header button:hover {
+  background-color: #21a1f1;
+}
+
+.header button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(33, 161, 241, 0.5);
+}
