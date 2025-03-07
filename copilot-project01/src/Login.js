@@ -8,6 +8,10 @@ function Login({ onLogin }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if (username === '' || password === '') {
+      alert('Username and Password fields cannot be left blank');
+      return;
+    }
     onLogin(username, password);
   };
 
