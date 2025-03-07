@@ -6,6 +6,7 @@ import Login from './Login';
 import Welcome from './Welcome';
 import Header from './Header';
 import Menu from './Menu'; // Assuming you have a Menu component
+import users from './Data/Users.json'; // Import Users.json from Data folder
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -13,10 +14,14 @@ function App() {
 
   const handleLogin = (username, password) => {
     // Perform authentication logic here
-    console.log('Username:', username);
-    console.log('Password:', password);
-    setIsAuthenticated(true);
-    setUsername(username);
+    const user = users.find(user => user.username === username && user.password === password);
+    if (user) {
+      setIsAuthenticated(true);
+      setUsername(username);
+      navigate('/welcome'); // Navigate to Welcome page on successful authentication
+    } else {
+      alert('Authentication failed'); // Add alert for authentication failure
+    }
   };
 
   const handleLogout = () => {
