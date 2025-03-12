@@ -12,6 +12,52 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState('');
 
+  // const handleLogin = (username, password) => {
+  //   // Perform authentication logic here
+  //   const user = users.find(user => user.username === username && user.password === password);
+  //   if (user) {
+  //     setIsAuthenticated(true);
+  //     setUsername(username);
+  //     // navigate('/welcome'); // Remove navigate from here
+  //   } else {
+  //     alert('Authentication failed'); // Add alert for authentication failure
+  //   }
+  // };
+
+  // const handleLogout = () => {
+  //   setIsAuthenticated(false);
+  //   setUsername('');
+  // };
+
+  return (
+    <Router>
+      <AppContent 
+        isAuthenticated={isAuthenticated} 
+        username={username} 
+        setIsAuthenticated={setIsAuthenticated} // Add setIsAuthenticated prop
+        setUsername={setUsername} // Add setUsername prop
+        // onLogin={handleLogin} // Remove onLogin prop
+        // onLogout={handleLogout} // Remove onLogout prop
+      />
+    </Router>
+  );
+}
+
+function AppContent({ isAuthenticated, username, setIsAuthenticated, setUsername }) {
+  const navigate = useNavigate();
+
+  const handleMenuClick = () => {
+    // Handle menu click logic here
+    console.log('Menu clicked');
+    navigate('/menu');
+  };
+
+  const handleTitleClick = () => {
+    // Handle title click logic here
+    console.log('Title clicked');
+    navigate('/welcome');
+  };
+
   const handleLogin = (username, password) => {
     // Perform authentication logic here
     const user = users.find(user => user.username === username && user.password === password);
@@ -30,37 +76,10 @@ function App() {
   };
 
   return (
-    <Router>
-      <AppContent 
-        isAuthenticated={isAuthenticated} 
-        username={username} 
-        onLogin={handleLogin} 
-        onLogout={handleLogout} 
-      />
-    </Router>
-  );
-}
-
-function AppContent({ isAuthenticated, username, onLogin, onLogout }) {
-  const navigate = useNavigate();
-
-  const handleMenuClick = () => {
-    // Handle menu click logic here
-    console.log('Menu clicked');
-    navigate('/menu');
-  };
-
-  const handleTitleClick = () => {
-    // Handle title click logic here
-    console.log('Title clicked');
-    navigate('/welcome');
-  };
-
-  return (
     <Container>
-      {isAuthenticated && <Header username={username} onLogout={onLogout} onMenuClick={handleMenuClick} onTitleClick={handleTitleClick} />}
+      {isAuthenticated && <Header username={username} onLogout={handleLogout} onMenuClick={handleMenuClick} onTitleClick={handleTitleClick} />}
       <Routes>
-        <Route path="/login" element={isAuthenticated ? <Navigate to="/welcome" /> : <Login onLogin={onLogin} />} />
+        <Route path="/login" element={isAuthenticated ? <Navigate to="/welcome" /> : <Login onLogin={handleLogin} />} />
         <Route path="/welcome" element={isAuthenticated ? <Welcome username={username} /> : <Navigate to="/login" />} />
         <Route path="/menu" element={isAuthenticated ? <Menu /> : <Navigate to="/login" />} />
         <Route path="/" element={<Navigate to={isAuthenticated ? "/welcome" : "/login"} />} />
