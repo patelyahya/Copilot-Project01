@@ -1,0 +1,30 @@
+[
+  {
+    "IsParent": true,
+    "FeatureName": "Dashboard",
+    "Link": "/dashboard",
+    "FeatureID": 1,
+    "ParentFeatureID": 0
+  },
+  {
+    "IsParent": true,
+    "FeatureName": "Reports",
+    "Link": "/reports",
+    "FeatureID": 2,
+    "ParentFeatureID": 0
+  },
+  {
+    "IsParent": false,
+    "FeatureName": "User Management",
+    "Link": "/user-management",
+    "FeatureID": 3,
+    "ParentFeatureID": 1
+  },
+  {
+    "IsParent": false,
+    "FeatureName": "Settings",
+    "Link": "/settings",
+    "FeatureID": 4,
+    "ParentFeatureID": 1
+  }
+]

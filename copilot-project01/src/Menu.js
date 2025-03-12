@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Menu.css';
+import menuData from './Data/menu.json';
 
 const Menu = () => {
+  const [menuItems, setMenuItems] = useState([]);
+
+  useEffect(() => {
+    setMenuItems(menuData);
+  }, []);
+
   return (
     <div className="menu-page">
       <h1>Menu</h1>
       <div className="menu-grid">
-        <div className="menu-item">Menu Item 1</div>
-        <div className="menu-item">Menu Item 2</div>
-        <div className="menu-item">Menu Item 3</div>
-        <div className="menu-item">Menu Item 4</div>
+        {menuItems.map((item, index) => (
+          <div key={index} className="menu-item">
+            <a href={item.Link}>{item.FeatureName}</a>
+          </div>
+        ))}
       </div>
     </div>
   );
