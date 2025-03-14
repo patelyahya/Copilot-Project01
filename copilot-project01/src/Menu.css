@@ -1,5 +1,7 @@
 .menu-page {
   padding: 20px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fafafa;
 }
 
 .menu-grid {
@@ -9,8 +11,31 @@
 }
 
 .menu-item {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   padding: 20px;
   text-align: center;
   border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.menu-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.menu-item-link {
+  display: block;
+  padding: 10px;
+  background-color: #ffffff;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #000;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item-link:hover {
+  background-color: #f0f0f0;
 }

@@ -13,7 +13,12 @@
    npm install
    ```
 
-3. Start the development server:
+3. Install MUI library and related dependencies:
+   ```sh
+   npm install @mui/material@6.4.7 @mui/icons-material@6.4.7 @emotion/react@11.0.0 @emotion/styled@11.0.0
+   ```
+
+4. Start the development server:
    ```sh
    npm start
    ```

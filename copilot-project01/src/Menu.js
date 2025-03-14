@@ -1,17 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Accordion, AccordionSummary, AccordionDetails, Typography, Container, Card, CardContent } from '@mui/material';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import './Menu.css';
+import menuData from './Data/menu.json';
+
+const MenuItem = ({ item }) => {
+  return (
+    <>
+      {item.IsParent ? (
+        <Card className="menu-item">
+          <CardContent>
+            <Typography variant="h6">{item.FeatureName}</Typography>
+            {item.SubFeatures && Array.isArray(item.SubFeatures) && item.SubFeatures.map((subItem, index) => (
+              <MenuItem key={index} item={subItem} />
+            ))}
+          </CardContent>
+        </Card>
+      ) : (
+        <a href={item.Link} className="menu-item-link">{item.FeatureName}</a>
+      )}
+    </>
+  );
+};
 
 const Menu = () => {
+  const [menuItems, setMenuItems] = useState([]);
+
+  useEffect(() => {
+    setMenuItems(menuData);
+  }, []);
+
   return (
-    <div className="menu-page">
-      <h1>Menu</h1>
+    <Container className="menu-page">
+      <Typography variant="h4">Menu</Typography>
       <div className="menu-grid">
-        <div className="menu-item">Menu Item 1</div>
-        <div className="menu-item">Menu Item 2</div>
-        <div className="menu-item">Menu Item 3</div>
-        <div className="menu-item">Menu Item 4</div>
+        {menuItems.map((item, index) => (
+          <MenuItem key={index} item={item} />
+        ))}
       </div>
-    </div>
+    </Container>
   );
 };
 

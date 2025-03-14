@@ -13,11 +13,13 @@
 .login-container {
   display: flex;
   align-items: center;
+  justify-content: center; /* Center the content horizontally */
   height: 100vh;
-  background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
+  background: linear-gradient(270deg, #3f51b5, #2196f3, #ff4081, #f50057);
   background-size: 800% 800%;
   animation: gradientAnimation 15s ease infinite;
-  background-color: #f8f9fa; /* Assuming this is the background color */
+  color: white;
+  padding: 20px;
 }
 
 .quote-container {
@@ -26,11 +28,13 @@
   align-items: center;
   padding: 20px;
   animation: fadeInLeft 1s ease-in-out;
-  background-color: #f8f9fa; /* Same background color */
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
 .quote-text {
-  font-family: 'Georgia', serif;
+  font-family: 'Roboto', serif;
   font-size: 24px;
   color: #333;
   text-align: center;
@@ -39,10 +43,24 @@
 .form-container {
   padding: 20px;
   animation: fadeInRight 1s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly more opaque */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 }
 
 .form-container .btn-primary {
   margin-top: 20px;
+  background-color: #3f51b5; /* Change button color to match theme */
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-container .btn-primary:hover {
+  background-color: #303f9f; /* Darker shade on hover */
 }
 
 @keyframes fadeInLeft {

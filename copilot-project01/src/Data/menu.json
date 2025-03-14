@@ -1,0 +1,46 @@
+[
+  {
+    "FeatureName": "Dashboard",
+    "Link": "",
+    "FeatureID": 1,
+    "IsParent": true,
+    "SubFeatures": [
+      {
+        "FeatureName": "User Management",
+        "Link": "/user-management",
+        "FeatureID": 11,
+        "IsParent": false,
+        "SubFeatures": []
+      },
+      {
+        "FeatureName": "Settings",
+        "Link": "/settings",
+        "FeatureID": 12,
+        "IsParent": false,
+        "SubFeatures": []
+      }
+    ]
+  },
+  {
+    "FeatureName": "Reports",
+    "Link": "",
+    "FeatureID": 2,
+    "IsParent": true,
+    "SubFeatures": [
+      {
+        "FeatureName": "Reports",
+        "Link": "/Reports",
+        "FeatureID": 21,
+        "IsParent": false,
+        "SubFeatures": []
+      },
+      {
+        "FeatureName": "StockLog",
+        "Link": "/StockLog",
+        "FeatureID": 22,
+        "IsParent": false,
+        "SubFeatures": []
+      }
+    ]
+  }
+]

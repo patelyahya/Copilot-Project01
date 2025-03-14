@@ -2,41 +2,49 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #282c34;
-  padding: 10px 20px;
+  background-color: #2c3e50; /* Changed to a darker shade */
+  padding: 5px 20px; /* Reduced padding to decrease height */
   color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header-left,
 .header-center,
 .header-right {
+  display: flex;
+  align-items: center;
+}
+
+.header-left {
   flex: 1;
 }
 
 .header-center {
-  text-align: center;
+  flex: 2;
+  justify-content: center;
 }
 
 .header-right {
-  text-align: right;
+  flex: 1;
+  justify-content: flex-end;
 }
 
 .header button {
-  background-color: #61dafb;
+  background-color: #3498db; /* Changed to a professional blue */
   border: none;
   padding: 8px 16px;
   cursor: pointer;
-  color: #282c34;
+  color: white;
   border-radius: 4px;
   font-size: 14px;
   transition: background-color 0.3s ease;
 }
 
 .header button:hover {
-  background-color: #21a1f1;
+  background-color: #2980b9; /* Darker blue on hover */
 }
 
 .header button:focus {
   outline: none;
-  box-shadow: 0 0 0 3px rgba(33, 161, 241, 0.5);
+  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.5); /* Adjusted focus color */
 }
