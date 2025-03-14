@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Container } from '@mui/material';
 import { BrowserRouter as Router, Route, Routes, Navigate, useNavigate } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Login from './Login';
 import Welcome from './Welcome';
 import Header from './Header';
@@ -12,23 +11,6 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState('');
 
-  // const handleLogin = (username, password) => {
-  //   // Perform authentication logic here
-  //   const user = users.find(user => user.username === username && user.password === password);
-  //   if (user) {
-  //     setIsAuthenticated(true);
-  //     setUsername(username);
-  //     // navigate('/welcome'); // Remove navigate from here
-  //   } else {
-  //     alert('Authentication failed'); // Add alert for authentication failure
-  //   }
-  // };
-
-  // const handleLogout = () => {
-  //   setIsAuthenticated(false);
-  //   setUsername('');
-  // };
-
   return (
     <Router>
       <AppContent 
@@ -36,8 +18,6 @@ function App() {
         username={username} 
         setIsAuthenticated={setIsAuthenticated} // Add setIsAuthenticated prop
         setUsername={setUsername} // Add setUsername prop
-        // onLogin={handleLogin} // Remove onLogin prop
-        // onLogout={handleLogout} // Remove onLogout prop
       />
     </Router>
   );

@@ -1,25 +1,24 @@
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 .welcome-container {
-  background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
-  background-size: 800% 800%;
-  animation: gradientAnimation 15s ease infinite;
-  background-color: #f8f9fa; /* Assuming this is the background color */
-  height: 100vh;
+  background: white;
+  height: calc(100vh - 60px); /* Adjusted height to account for header */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: black;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.welcome-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.login-text {
+  font-family: 'Arial', sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
 }

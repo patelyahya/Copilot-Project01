@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import { TextField, Button, Typography, Container, Paper } from '@mui/material';
+import Grid2 from '@mui/material/Grid2'; // Import Grid2 component
 import './Login.css'; // Import the CSS file
 
 function Login({ onLogin }) {
@@ -16,41 +17,46 @@ function Login({ onLogin }) {
   };
 
   return (
-    <Row className="login-container vh-100">
-      <Col md="6" className="quote-container d-flex align-items-center justify-content-center">
-        <h2 className="quote-text">"The only true wisdom is in knowing you know nothing." - Socrates</h2>
-      </Col>
-      <Col md="6" className="form-container d-flex align-items-center justify-content-center">
-        <div>
-          <h2>Login</h2>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="formBasicUsername">
-              <Form.Label>Username</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Enter username"
+    <Container className="login-container" maxWidth="lg"> {/* Change maxWidth to lg */}
+      <Grid2 container spacing={4} alignItems="center" justifyContent="center">
+        <Grid2 item md={6}>
+          <div className="quote-container" style={{ backgroundColor: 'transparent' }}>
+            <Typography variant="h4" className="quote-text" style={{ fontStyle: 'italic' }}>
+              "The only true wisdom is in knowing you know nothing." - Socrates
+            </Typography>
+          </div>
+        </Grid2>
+        <Grid2 item md={6}>
+          <Paper elevation={3} className="form-container">
+            <Typography variant="h4" gutterBottom>
+              Login
+            </Typography>
+            <form onSubmit={handleSubmit}>
+              <TextField
+                label="Username"
+                variant="outlined"
+                fullWidth
+                margin="normal"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
               />
-            </Form.Group>
-
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
+              <TextField
+                label="Password"
                 type="password"
-                placeholder="Password"
+                variant="outlined"
+                fullWidth
+                margin="normal"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-            </Form.Group>
-
-            <Button variant="primary" type="submit">
-              Submit
-            </Button>
-          </Form>
-        </div>
-      </Col>
-    </Row>
+              <Button variant="contained" color="primary" type="submit" fullWidth className="btn-primary">
+                Submit
+              </Button>
+            </form>
+          </Paper>
+        </Grid2>
+      </Grid2>
+    </Container>
   );
 }
 

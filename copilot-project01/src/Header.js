@@ -1,22 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { AppBar, Toolbar, Typography, IconButton, Button } from '@mui/material';
 import { FaUser, FaBars, FaPowerOff } from 'react-icons/fa';
 import './Header.css';
 
 const Header = ({ username, onLogout, onMenuClick, onTitleClick }) => {
   return (
-    <header className="header">
-      <div className="header-left">
-        <FaUser size={20} /> {username.toUpperCase()}
-      </div>
-      <div className="header-center" >
-        <FaBars size={20} onClick={onMenuClick} /> 
-        <span onClick={onTitleClick}>ERP Solution</span>
-      </div>
-      <div className="header-right">
-        <button onClick={onLogout}><FaPowerOff size={20} /> Logout</button>
-      </div>
-    </header>
+    <AppBar position="static">
+      <Toolbar className="header">
+        <div className="header-left">
+          <Typography variant="body1">
+            <FaUser size={20} /> {username.toUpperCase()}
+          </Typography>
+        </div>
+        <div className="header-center">
+          <IconButton edge="start" color="inherit" aria-label="menu" onClick={onMenuClick}>
+            <FaBars />
+          </IconButton>
+          <Typography variant="h6" onClick={onTitleClick} style={{ marginLeft: '10px' }}>
+            ERP Solution
+          </Typography>
+        </div>
+        <div className="header-right">
+          <Button color="inherit" onClick={onLogout}>
+            <FaPowerOff size={20} /> Logout
+          </Button>
+        </div>
+      </Toolbar>
+    </AppBar>
   );
 };
 
