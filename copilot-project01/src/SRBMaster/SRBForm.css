@@ -1,0 +1,53 @@
+.srb-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.srb-form-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.srb-form-table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.srb-form-table th,
+.srb-form-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.srb-form-table th {
+  background-color: #3f51b5;
+  color: white;
+}
+
+.srb-form-table tr:nth-of-type(even) {
+  background-color: #f2f2f2;
+}
+
+.srb-form-input {
+  margin-bottom: 20px;
+}
+
+.srb-form-button {
+  background-color: #3f51b5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.srb-form-button:hover {
+  background-color: #303f9f;
+}

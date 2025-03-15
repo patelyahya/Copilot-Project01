@@ -6,6 +6,7 @@ import Welcome from './Welcome';
 import Header from './Header';
 import Menu from './Menu'; // Assuming you have a Menu component
 import users from './Data/Users.json'; // Import Users.json from Data folder
+import SRBForm from './SRBMaster/SRBForm'; // Import SRBForm component
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -62,6 +63,7 @@ function AppContent({ isAuthenticated, username, setIsAuthenticated, setUsername
         <Route path="/login" element={isAuthenticated ? <Navigate to="/welcome" /> : <Login onLogin={handleLogin} />} />
         <Route path="/welcome" element={isAuthenticated ? <Welcome username={username} /> : <Navigate to="/login" />} />
         <Route path="/menu" element={isAuthenticated ? <Menu /> : <Navigate to="/login" />} />
+        <Route path="/srb-form" element={isAuthenticated ? <SRBForm /> : <Navigate to="/login" />} /> {/* Add new route for SRBForm */}
         <Route path="/" element={<Navigate to={isAuthenticated ? "/welcome" : "/login"} />} />
       </Routes>
     </Container>
